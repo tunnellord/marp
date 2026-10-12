@@ -18,7 +18,7 @@ Ein Marp-Theme, das den Stil von **Omarchy** nachahmt. Farben: **Matte Black**. 
 | `Omarchy Pixel Axians Light Demo.md` | Dasselbe Deck mit `theme: omarchy-pixel-axians-light` |
 | `.obsidian/plugins/marp-slides/data.json` | Plugin-Einstellungen mit `"ThemePath": "MarpThemes"` |
 
-**Plugin:** Marp Slides (samuatt) 0.46.1. `EnableHTML` ist **aus**, deshalb kommt der gesamte Look aus reinem CSS und das Deck enthält kein Inline-HTML.
+**Plugin:** Marp Slides (samuele-cozzi) 0.46.1. `EnableHTML` ist **aus**, deshalb kommt der gesamte Look aus reinem CSS und das Deck enthält kein Inline-HTML.
 
 ## Benutzung
 ```yaml
