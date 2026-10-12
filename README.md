@@ -2,6 +2,15 @@
 
 Pixel-look [Marp](https://marp.app) themes inspired by [Omarchy](https://omarchy.org) (Matte Black): blocky fonts, notched pixel borders, hard drop shadows, a Waybar-style top bar and Hyprland-style windows. Fonts are embedded as Base64, so every theme is a single self-contained CSS file.
 
+## Demos
+
+Click a preview to open the full demo deck as PDF (12 slides, every class).
+
+| | |
+| --- | --- |
+| [![omarchy-pixel](previews/omarchy-pixel.png)](Omarchy%20Pixel%20Demo.pdf)<br>`omarchy-pixel` | [![omarchy-pixel-light](previews/omarchy-pixel-light.png)](Omarchy%20Pixel%20Light%20Demo.pdf)<br>`omarchy-pixel-light` |
+| [![omarchy-pixel-axians](previews/omarchy-pixel-axians.png)](Omarchy%20Pixel%20Axians%20Demo.pdf)<br>`omarchy-pixel-axians` | [![omarchy-pixel-axians-light](previews/omarchy-pixel-axians-light.png)](Omarchy%20Pixel%20Axians%20Light%20Demo.pdf)<br>`omarchy-pixel-axians-light` |
+
 ## Themes
 
 | Theme | File | Look |
@@ -49,7 +58,7 @@ Set per slide with `<!-- _class: name -->` or for the whole deck with `class: na
 | `small` / `tiny` | Shrink only the code blocks (16px / 13px) |
 | `no-workspaces` | Hide the logo and workspace marker in the top bar |
 
-The demo decks (`Omarchy Pixel * Demo.md`) show every class. Design notes (German) are in `Omarchy Pixel Theme – Notizen.md`.
+The demo decks (`Omarchy Pixel * Demo.md`, rendered as `.pdf`) show every class. Design notes (German) are in `Omarchy Pixel Theme – Notizen.md`.
 
 ## Credits & licenses
 
