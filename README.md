@@ -24,7 +24,7 @@ All variants `@import 'omarchy-pixel'` and only swap the palette, so the base th
 
 ## Usage
 
-**Obsidian ([Marp Slides](https://github.com/samuatt/marp-slides)):** copy `MarpThemes/` into your vault and set the plugin's theme path to `MarpThemes`. Reopen the preview after adding new theme files.
+**Obsidian ([Marp Slides](https://github.com/samuele-cozzi/obsidian-marp-slides)):** copy `MarpThemes/` into your vault and set the plugin's theme path to `MarpThemes`. Reopen the preview after adding new theme files.
 
 **marp-cli:**
 
