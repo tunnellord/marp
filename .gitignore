@@ -1,0 +1,12 @@
+# This folder is an Obsidian vault. Only the theme project is tracked —
+# everything else (personal notes, .obsidian, exports) is ignored by default.
+/*
+!/.gitignore
+!/README.md
+!/MarpThemes/
+!/fonts/
+!/Omarchy Pixel Theme – Notizen.md
+!/Omarchy Pixel Demo.md
+!/Omarchy Pixel Light Demo.md
+!/Omarchy Pixel Axians Demo.md
+!/Omarchy Pixel Axians Light Demo.md

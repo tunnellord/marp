@@ -1,0 +1,102 @@
+/* @theme omarchy-pixel-axians */
+
+/*
+ * omarchy-pixel-axians — omarchy-pixel in Axians brand colours.
+ * Palette taken from axians.de/.at/.nl/.co.uk (identical on all four):
+ *   magenta #a20067, magenta-dark #690043, blue #005eb8,
+ *   navy #0d1628 / #0a1220, anthracite #2f2f2f, light grey #f8f8f8.
+ * Brand magenta has ~1.1:1 contrast on navy, so text accents use the
+ * brighter site magenta #e6007e; the original tones go into shadows,
+ * frames and the light `invert` slide.
+ */
+
+@import 'omarchy-pixel';
+
+:root {
+  --bg: #0d1628;
+  --bg-dark: #0a1220;
+  --bg-darker: #070d18;
+  --bg-light: #16223a;
+  --selection: #1f2d48;
+  --muted: #2a3a58;
+  --fg: #d8d8d8;
+  --fg-dim: #979fae;
+  --fg-dark: #56637a;
+  --fg-bright: #f8f8f8;
+  --accent: #e6007e;
+  --accent-bright: #ff3d9a;
+  /* "yellow" role (strings, inline code) → light brand blue */
+  --yellow: #5fa8f0;
+  --red: #ff6f91;
+  --red-deep: #a20067;
+  /* pixel extrusion → deep brand magenta */
+  --brown: #690043;
+
+  --grid-dot: #18243b;
+  --scan: rgba(0, 0, 0, 0.22);
+  --window-bg: #070d18;
+  --code-bg: #070d18;
+  --shadow: #05090f;
+  --bar-bg: #070d18;
+}
+
+/* title extrusion: magenta → brand blue → deep magenta */
+section.lead h1 {
+  text-shadow:
+    var(--px) var(--px) 0 var(--accent-bright),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 #005eb8,
+    calc(var(--px) * 3) calc(var(--px) * 3) 0 var(--brown),
+    calc(var(--px) * 4) calc(var(--px) * 4) 0 var(--shadow);
+}
+
+/* ───────── invert → light Axians slide (like the website) ───────── */
+
+section.invert {
+  --bg: #f8f8f8;
+  --bg-dark: #ececec;
+  --bg-darker: #d8d8d8;
+  --bg-light: #ffffff;
+  --selection: #ececec;
+  --muted: #bababa;
+  --fg: #2f2f2f;
+  --fg-dim: #616161;
+  --fg-dark: #8b8b8b;
+  --fg-bright: #0a1220;
+  --accent: #a20067;
+  --accent-bright: #820053;
+  --yellow: #005eb8;
+  --red: #a20067;
+  --brown: #005eb8;
+  --grid-dot: #e2e2e2;
+  --scan: rgba(0, 0, 0, 0.025);
+  --window-bg: #ffffff;
+  --code-bg: #ffffff;
+  --shadow: #d8d8d8;
+  --bar-bg: #0d1628;
+  background-image:
+    repeating-linear-gradient(to bottom, var(--scan) 0 2px, transparent 2px 4px),
+    radial-gradient(circle at 1px 1px, var(--grid-dot) 1.5px, transparent 1.6px);
+}
+section.invert h1 {
+  color: var(--accent);
+  text-shadow:
+    var(--px) var(--px) 0 var(--brown),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--shadow);
+}
+section.invert h1::after {
+  color: var(--accent);
+}
+section.invert code {
+  color: var(--accent);
+  background: var(--bg-dark);
+}
+section.invert pre {
+  background: var(--code-bg);
+}
+section.invert pre code {
+  color: var(--fg);
+  background: none;
+}
+section.invert header {
+  color: #d8d8d8;
+}
