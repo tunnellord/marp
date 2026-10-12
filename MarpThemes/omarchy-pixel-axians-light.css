@@ -1,0 +1,100 @@
+/* @theme omarchy-pixel-axians-light */
+
+/*
+ * omarchy-pixel-axians-light — light Axians variant, like the website:
+ * light grey paper, anthracite text, brand magenta #a20067 as accent,
+ * brand blue #005eb8 for strings / inline code.
+ * Imports the base theme (not omarchy-pixel-light) so that `invert`
+ * becomes a navy Axians slide instead of Matte Black.
+ */
+
+@import 'omarchy-pixel';
+
+:root {
+  --bg: #f8f8f8;
+  --bg-dark: #ececec;
+  --bg-darker: #d8d8d8;
+  --bg-light: #ffffff;
+  --selection: #ececec;
+  --muted: #bababa;
+  --fg: #2f2f2f;
+  --fg-dim: #616161;
+  --fg-dark: #8b8b8b;
+  --fg-bright: #0a1220;
+  --accent: #a20067;
+  --accent-bright: #c4007a;
+  --yellow: #005eb8;
+  --red: #c4314b;
+  --red-deep: #690043;
+  /* pixel extrusion → light magenta tint */
+  --brown: #ecc0db;
+
+  --grid-dot: #e2e2e2;
+  --scan: rgba(0, 0, 0, 0.025);
+  --window-bg: #ffffff;
+  --code-bg: #ffffff;
+  --shadow: #d8d8d8;
+  --bar-bg: #ececec;
+}
+
+/* title extrusion: magenta → brand blue → tint */
+section.lead h1 {
+  text-shadow:
+    var(--px) var(--px) 0 var(--accent),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 #005eb8,
+    calc(var(--px) * 3) calc(var(--px) * 3) 0 var(--brown),
+    calc(var(--px) * 4) calc(var(--px) * 4) 0 var(--shadow);
+}
+
+/* ───────── invert → navy Axians slide ───────── */
+
+section.invert {
+  --bg: #0d1628;
+  --bg-dark: #0a1220;
+  --bg-darker: #070d18;
+  --bg-light: #16223a;
+  --selection: #1f2d48;
+  --muted: #2a3a58;
+  --fg: #d8d8d8;
+  --fg-dim: #979fae;
+  --fg-dark: #56637a;
+  --fg-bright: #f8f8f8;
+  /* brand magenta is too dark on navy (~1.1:1) → brighter site magenta */
+  --accent: #e6007e;
+  --accent-bright: #ff3d9a;
+  --yellow: #5fa8f0;
+  --red: #ff6f91;
+  --brown: #690043;
+  --grid-dot: #18243b;
+  --scan: rgba(0, 0, 0, 0.22);
+  --window-bg: #070d18;
+  --code-bg: #070d18;
+  --shadow: #05090f;
+  --bar-bg: #070d18;
+  background-image:
+    repeating-linear-gradient(to bottom, var(--scan) 0 2px, transparent 2px 4px),
+    radial-gradient(circle at 1px 1px, var(--grid-dot) 1.5px, transparent 1.6px);
+}
+section.invert h1 {
+  color: var(--accent);
+  text-shadow:
+    var(--px) var(--px) 0 var(--brown),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--shadow);
+}
+section.invert h1::after {
+  color: var(--accent);
+}
+section.invert code {
+  color: var(--yellow);
+  background: var(--bg-light);
+}
+section.invert pre {
+  background: var(--code-bg);
+}
+section.invert pre code {
+  color: var(--fg);
+  background: none;
+}
+section.invert header {
+  color: var(--fg);
+}

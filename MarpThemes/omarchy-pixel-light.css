@@ -1,0 +1,85 @@
+/* @theme omarchy-pixel-light */
+
+/*
+ * omarchy-pixel-light — light variant of omarchy-pixel.
+ * Reuses everything (fonts, pixel borders, waybar, classes) and only
+ * swaps the palette. `invert` slides become Matte Black here.
+ */
+
+@import 'omarchy-pixel';
+
+:root {
+  --bg: #ececec;
+  --bg-dark: #dedede;
+  --bg-darker: #d0d0d0;
+  --bg-light: #f7f7f7;
+  --selection: #d6d6d6;
+  --muted: #bdbdbd;
+  --fg: #2b2b2b;
+  --fg-dim: #5a5a5a;
+  --fg-dark: #8a8a8d;
+  --fg-bright: #0d0d0d;
+  /* accent darkened for contrast on light paper */
+  --accent: #c26a00;
+  --accent-bright: #e68e0d;
+  --yellow: #94560a;
+  --red: #b91c1c;
+  --red-deep: #8f1515;
+  --brown: #e3b98a;
+
+  --grid-dot: #d6d6d6;
+  --scan: rgba(0, 0, 0, 0.025);
+  --window-bg: #f7f7f7;
+  --code-bg: #f7f7f7;
+  --shadow: #c4c4c4;
+  --bar-bg: #d6d6d6;
+}
+
+th {
+  color: var(--fg-bright);
+}
+
+/* ───────── invert → Matte Black slide ───────── */
+
+section.invert {
+  --bg: #121212;
+  --bg-dark: #0d0d0d;
+  --bg-darker: #090909;
+  --bg-light: #1e1e1e;
+  --selection: #2a2a2a;
+  --muted: #333333;
+  --fg: #bebebe;
+  --fg-dim: #8a8a8d;
+  --fg-dark: #555555;
+  --fg-bright: #eaeaea;
+  --accent: #e68e0d;
+  --accent-bright: #f59e0b;
+  --yellow: #ffc107;
+  --red: #d35f5f;
+  --brown: #631e1e;
+  --grid-dot: #1f1f1f;
+  --scan: rgba(0, 0, 0, 0.22);
+  --window-bg: #090909;
+  --code-bg: #090909;
+  --shadow: #090909;
+  --bar-bg: #090909;
+  background-image:
+    repeating-linear-gradient(to bottom, var(--scan) 0 2px, transparent 2px 4px),
+    radial-gradient(circle at 1px 1px, var(--grid-dot) 1.5px, transparent 1.6px);
+}
+section.invert h1 {
+  color: var(--accent);
+  text-shadow:
+    var(--px) var(--px) 0 var(--brown),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--shadow);
+}
+section.invert code {
+  color: var(--yellow);
+  background: var(--bg-light);
+}
+section.invert pre code {
+  background: none;
+}
+section.invert th {
+  color: var(--bg);
+}
