@@ -6,7 +6,7 @@ header: '22:14  ·  Sat Oct 11'
 footer: 'omarchy-pixel · marp theme'
 ---
 
-<!-- _class: lead no-workspaces -->
+<!-- _class: lead -->
 <!-- _paginate: false -->
 <!-- _footer: '' -->
 
