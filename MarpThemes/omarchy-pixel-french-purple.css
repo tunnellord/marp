@@ -74,7 +74,7 @@ section.invert {
   --shadow: #d8d8d8;
   --bar-bg: #0d1628;
   background-image:
-    repeating-linear-gradient(to bottom, var(--scan) 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, var(--scan) 2px, transparent 2px),
     radial-gradient(circle at 1px 1px, var(--grid-dot) 1.5px, transparent 1.6px);
 }
 section.invert h1 {

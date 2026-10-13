@@ -64,6 +64,7 @@ Folienklassen setzt man mit `<!-- _class: name -->`:
   - `invert` ergibt im dunklen French-Purple-Theme eine helle Folie (`#f8f8f8`, Akzent `#a20067`), Codeblöcke dort weiß.
 - **Zu volle Folien:** `justify-content: safe center`. Läuft der Inhalt über, klebt er oben und verschwindet nicht unter der Leiste. Automatisch passend skalieren kann CSS nicht, dafür gibt es `small`/`tiny`. Die verkleinern nur die Schriftgröße und das Padding von `pre`.
 - **Hintergrund:** Punktraster mit 24px Abstand plus Scanlines alle 4px
+- **Kein `repeating-linear-gradient`:** Chromium schreibt den ins PDF als Shading mit PostScript-Funktion (FunctionType 4), und viele PDF-Viewer zeichnen das als durchgehende Fläche. Deshalb ist die h2-Linie gestrichelt nur noch als einzelne Kachel mit harten Kanten plus `background-repeat` gebaut, das gilt auch für `hr` und die Scanlines.
 
 ## Verifikation (lokal)
 ```bash
