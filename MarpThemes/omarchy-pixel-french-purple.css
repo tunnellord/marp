@@ -1,12 +1,12 @@
-/* @theme omarchy-pixel-axians */
+/* @theme omarchy-pixel-french-purple */
 
 /*
- * omarchy-pixel-axians — omarchy-pixel in Axians brand colours.
- * Palette taken from axians.de/.at/.nl/.co.uk (identical on all four):
+ * omarchy-pixel-french-purple — omarchy-pixel in navy + French purple.
+ * Palette:
  *   magenta #a20067, magenta-dark #690043, blue #005eb8,
  *   navy #0d1628 / #0a1220, anthracite #2f2f2f, light grey #f8f8f8.
- * Brand magenta has ~1.1:1 contrast on navy, so text accents use the
- * brighter site magenta #e6007e; the original tones go into shadows,
+ * Base magenta has ~1.1:1 contrast on navy, so text accents use the
+ * brighter magenta #e6007e; the original tones go into shadows,
  * frames and the light `invert` slide.
  */
 
@@ -49,7 +49,7 @@ section.lead h1 {
     calc(var(--px) * 4) calc(var(--px) * 4) 0 var(--shadow);
 }
 
-/* ───────── invert → light Axians slide (like the website) ───────── */
+/* ───────── invert → light slide ───────── */
 
 section.invert {
   --bg: #f8f8f8;

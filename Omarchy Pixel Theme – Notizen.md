@@ -10,12 +10,12 @@ Ein Marp-Theme, das den Stil von **Omarchy** nachahmt. Farben: **Matte Black**. 
 | --- | --- |
 | `MarpThemes/omarchy-pixel.css` | Das Theme, etwa 245 KB, Schriften als Base64 eingebettet |
 | `MarpThemes/omarchy-pixel-light.css` | Helle Variante, wenige KB, importiert `omarchy-pixel` und tauscht nur die Palette |
-| `MarpThemes/omarchy-pixel-axians.css` | Axians-Variante (Navy + Magenta), importiert `omarchy-pixel` |
-| `MarpThemes/omarchy-pixel-axians-light.css` | Helle Axians-Variante (Hellgrau + Magenta), importiert direkt `omarchy-pixel` |
+| `MarpThemes/omarchy-pixel-french-purple.css` | French-Purple-Variante (Navy + Magenta), importiert `omarchy-pixel` |
+| `MarpThemes/omarchy-pixel-french-purple-light.css` | Helle French-Purple-Variante (Hellgrau + Magenta), importiert direkt `omarchy-pixel` |
 | `Omarchy Pixel Demo.md` | Demo-Deck mit 12 Folien, zeigt alle Klassen inkl. `small`/`tiny` mit langen Codezeilen |
 | `Omarchy Pixel Light Demo.md` | Dasselbe Deck mit `theme: omarchy-pixel-light` |
-| `Omarchy Pixel Axians Demo.md` | Dasselbe Deck mit `theme: omarchy-pixel-axians` |
-| `Omarchy Pixel Axians Light Demo.md` | Dasselbe Deck mit `theme: omarchy-pixel-axians-light` |
+| `Omarchy Pixel French Purple Demo.md` | Dasselbe Deck mit `theme: omarchy-pixel-french-purple` |
+| `Omarchy Pixel French Purple Light Demo.md` | Dasselbe Deck mit `theme: omarchy-pixel-french-purple-light` |
 | `.obsidian/plugins/marp-slides/data.json` | Plugin-Einstellungen mit `"ThemePath": "MarpThemes"` |
 
 **Plugin:** Marp Slides (samuele-cozzi) 0.46.1. `EnableHTML` ist **aus**, deshalb kommt der gesamte Look aus reinem CSS und das Deck enthält kein Inline-HTML.
@@ -58,10 +58,10 @@ Folienklassen setzt man mit `<!-- _class: name -->`:
   - Flächen-Variablen im Basis-Theme: `--grid-dot`, `--scan`, `--window-bg`, `--code-bg`, `--shadow`, `--bar-bg`. Neue Farben immer über Variablen einbauen und nicht hart codieren, sonst stimmt das helle Theme nicht mehr.
   - Helle Palette: bg `#ececec`, fg `#2b2b2b`. Der Akzent ist auf `#c26a00` abgedunkelt, damit er auf hellem Grund genug Kontrast hat. Statt Gelb gibt es Dunkelgold `#94560a`, statt Braun Hellbraun `#e3b98a` für die Pixel-Extrusion.
 - **Codeblöcke:** `white-space: pre-wrap` und `overflow-wrap: anywhere`, damit lange Zeilen umbrechen und nicht rechts aus der Folie laufen.
-- **Axians-Theme:** Farben aus dem CSS von axians.de/.at/.nl/.co.uk (überall gleich): Magenta `#a20067`, Dunkelmagenta `#690043`, Blau `#005eb8`, Navy `#0d1628`/`#0a1220`, Anthrazit `#2f2f2f`, Hellgrau `#f8f8f8`. axians.com blockt per Cloudflare.
-  - Markenmagenta hat auf Navy nur ca. 1,1:1 Kontrast, deshalb ist der Text-Akzent das hellere `#e6007e` (kommt auch auf der Website vor). `--yellow` ist hier Hellblau `#5fa8f0`, `--brown` Dunkelmagenta.
-  - Hell (`omarchy-pixel-axians-light`): bg `#f8f8f8`, fg `#2f2f2f`, Akzent ist das echte Markenmagenta `#a20067`, Strings und Inline-Code in Markenblau `#005eb8`, Extrusion als Magenta-Tönung `#ecc0db`. Es importiert `omarchy-pixel` und nicht `omarchy-pixel-light`, damit `invert` eine Navy-Folie wird und kein Matte Black.
-  - `invert` ergibt im dunklen Axians-Theme eine helle Folie im Stil der Website (`#f8f8f8`, Akzent `#a20067`), Codeblöcke dort weiß.
+- **French-Purple-Theme:** Palette: Magenta `#a20067`, Dunkelmagenta `#690043`, Blau `#005eb8`, Navy `#0d1628`/`#0a1220`, Anthrazit `#2f2f2f`, Hellgrau `#f8f8f8`.
+  - Das Basis-Magenta hat auf Navy nur ca. 1,1:1 Kontrast, deshalb ist der Text-Akzent das hellere `#e6007e`. `--yellow` ist hier Hellblau `#5fa8f0`, `--brown` Dunkelmagenta.
+  - Hell (`omarchy-pixel-french-purple-light`): bg `#f8f8f8`, fg `#2f2f2f`, Akzent ist das Basis-Magenta `#a20067`, Strings und Inline-Code in Blau `#005eb8`, Extrusion als Magenta-Tönung `#ecc0db`. Es importiert `omarchy-pixel` und nicht `omarchy-pixel-light`, damit `invert` eine Navy-Folie wird und kein Matte Black.
+  - `invert` ergibt im dunklen French-Purple-Theme eine helle Folie (`#f8f8f8`, Akzent `#a20067`), Codeblöcke dort weiß.
 - **Zu volle Folien:** `justify-content: safe center`. Läuft der Inhalt über, klebt er oben und verschwindet nicht unter der Leiste. Automatisch passend skalieren kann CSS nicht, dafür gibt es `small`/`tiny`. Die verkleinern nur die Schriftgröße und das Padding von `pre`.
 - **Hintergrund:** Punktraster mit 24px Abstand plus Scanlines alle 4px
 
@@ -78,7 +78,7 @@ Das dauert etwa 1–2 Minuten, also am besten im Hintergrund laufen lassen.
 - [x] Helles Theme (`omarchy-pixel-light`)
 - [x] Lange Codezeilen laufen rechts raus → umbrechen jetzt
 - [x] Zu volle Folien laufen unten raus → `safe center` + Klassen `small`/`tiny`, die nur Codeblöcke verkleinern. Eine erste Version hat per `zoom` die ganze Folie verkleinert. Das war nicht gewünscht, betroffen sein soll nur der Code.
-- [x] Axians-Farbschema (`omarchy-pixel-axians`, dunkel). Dazu die helle Variante `omarchy-pixel-axians-light`.
+- [x] French-Purple-Farbschema (`omarchy-pixel-french-purple`, dunkel). Dazu die helle Variante `omarchy-pixel-french-purple-light`.
 - [ ] Weitere Omarchy-Farbschemata als eigene Theme-Dateien nach dem gleichen Muster wie das helle Theme, z. B. Tokyo Night, Gruvbox, Rosé Pine, Catppuccin
 - [ ] Option: VT323 auch für den Fließtext, für mehr Pixel-Look
 - [ ] Pixel-Fortschrittsbalken unten
