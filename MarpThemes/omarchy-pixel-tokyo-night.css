@@ -1,0 +1,103 @@
+/* @theme omarchy-pixel-tokyo-night */
+
+/*
+ * omarchy-pixel-tokyo-night — omarchy-pixel in Tokyo Night, Omarchy's
+ * default theme (basecamp/omarchy themes/tokyo-night/colors.toml):
+ *   bg #1a1b26, fg #a9b1d6 / #c0caf5, accent blue #7aa2f7,
+ *   magenta #bb9af7, green #9ece6a, orange #ff9e64, red #f7768e,
+ *   comment #565f89, terminal black #414868.
+ * Roles follow the Tokyo Night editor scheme: strings green,
+ * numbers orange. The `invert` slide uses Tokyo Night Day.
+ */
+
+@import 'omarchy-pixel';
+
+:root {
+  --bg: #1a1b26;
+  --bg-dark: #16161e;
+  --bg-darker: #101014;
+  --bg-light: #24283b;
+  --selection: #292e42;
+  --muted: #414868;
+  --fg: #a9b1d6;
+  --fg-dim: #787c99;
+  --fg-dark: #565f89;
+  --fg-bright: #c0caf5;
+  --accent: #7aa2f7;
+  --accent-bright: #7dcfff;
+  /* "yellow" role (strings, inline code, h3) → Tokyo Night green */
+  --yellow: #9ece6a;
+  /* "red" role (numbers, literals) → Tokyo Night orange */
+  --red: #ff9e64;
+  --red-deep: #f7768e;
+  /* pixel extrusion → deep blue */
+  --brown: #3d59a1;
+
+  --grid-dot: #242636;
+  --scan: rgba(0, 0, 0, 0.22);
+  --window-bg: #16161e;
+  --code-bg: #16161e;
+  --shadow: #101014;
+  --bar-bg: #16161e;
+}
+
+/* title extrusion: cyan → magenta → deep blue */
+section.lead h1 {
+  text-shadow:
+    var(--px) var(--px) 0 var(--accent-bright),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 #bb9af7,
+    calc(var(--px) * 3) calc(var(--px) * 3) 0 var(--brown),
+    calc(var(--px) * 4) calc(var(--px) * 4) 0 var(--shadow);
+}
+
+/* ───────── invert → Tokyo Night Day slide ───────── */
+
+section.invert {
+  --bg: #e1e2e7;
+  --bg-dark: #d0d5e3;
+  --bg-darker: #c4c8da;
+  --bg-light: #e9e9ed;
+  --selection: #d0d5e3;
+  --muted: #a8aecb;
+  --fg: #3760bf;
+  --fg-dim: #6172b0;
+  --fg-dark: #8990b3;
+  --fg-bright: #1a1b26;
+  --accent: #2e7de9;
+  --accent-bright: #007197;
+  --yellow: #587539;
+  --red: #b15c00;
+  --brown: #9854f1;
+  --grid-dot: #d0d5e3;
+  --scan: rgba(0, 0, 0, 0.025);
+  --window-bg: #e9e9ed;
+  --code-bg: #e9e9ed;
+  --shadow: #c4c8da;
+  --bar-bg: #16161e;
+  background-image:
+    linear-gradient(to bottom, var(--scan) 2px, transparent 2px),
+    radial-gradient(circle at 1px 1px, var(--grid-dot) 1.5px, transparent 1.6px);
+}
+section.invert h1 {
+  color: var(--accent);
+  text-shadow:
+    var(--px) var(--px) 0 var(--brown),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--shadow);
+}
+section.invert h1::after {
+  color: var(--accent);
+}
+section.invert code {
+  color: var(--brown);
+  background: var(--bg-dark);
+}
+section.invert pre {
+  background: var(--code-bg);
+}
+section.invert pre code {
+  color: var(--fg);
+  background: none;
+}
+section.invert header {
+  color: #a9b1d6;
+}

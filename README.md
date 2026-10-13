@@ -10,6 +10,7 @@ Click a preview to open the full demo deck as PDF (12 slides, every class).
 | --- | --- |
 | [![omarchy-pixel](previews/omarchy-pixel.png)](Omarchy%20Pixel%20Demo.pdf)<br>`omarchy-pixel` | [![omarchy-pixel-light](previews/omarchy-pixel-light.png)](Omarchy%20Pixel%20Light%20Demo.pdf)<br>`omarchy-pixel-light` |
 | [![omarchy-pixel-french-purple](previews/omarchy-pixel-french-purple.png)](Omarchy%20Pixel%20French%20Purple%20Demo.pdf)<br>`omarchy-pixel-french-purple` | [![omarchy-pixel-french-purple-light](previews/omarchy-pixel-french-purple-light.png)](Omarchy%20Pixel%20French%20Purple%20Light%20Demo.pdf)<br>`omarchy-pixel-french-purple-light` |
+| [![omarchy-pixel-tokyo-night](previews/omarchy-pixel-tokyo-night.png)](Omarchy%20Pixel%20Tokyo%20Night%20Demo.pdf)<br>`omarchy-pixel-tokyo-night` | [![omarchy-pixel-catppuccin-latte](previews/omarchy-pixel-catppuccin-latte.png)](Omarchy%20Pixel%20Catppuccin%20Latte%20Demo.pdf)<br>`omarchy-pixel-catppuccin-latte` |
 
 ## Themes
 
@@ -19,6 +20,8 @@ Click a preview to open the full demo deck as PDF (12 slides, every class).
 | `omarchy-pixel-light` | `MarpThemes/omarchy-pixel-light.css` | Light paper, darkened orange |
 | `omarchy-pixel-french-purple` | `MarpThemes/omarchy-pixel-french-purple.css` | Navy + magenta |
 | `omarchy-pixel-french-purple-light` | `MarpThemes/omarchy-pixel-french-purple-light.css` | Light grey + magenta |
+| `omarchy-pixel-tokyo-night` | `MarpThemes/omarchy-pixel-tokyo-night.css` | Tokyo Night (Omarchy default), blue accent |
+| `omarchy-pixel-catppuccin-latte` | `MarpThemes/omarchy-pixel-catppuccin-latte.css` | Catppuccin Latte, blue accent |
 
 All variants `@import 'omarchy-pixel'` and only swap the palette, so the base theme must always be loaded alongside them.
 
@@ -62,5 +65,5 @@ The demo decks (`Omarchy Pixel * Demo.md`, rendered as `.pdf`) show every class.
 
 ## Credits & licenses
 
-- Omarchy Matte Black palette from [basecamp/omarchy](https://github.com/basecamp/omarchy).
+- Omarchy Matte Black, Tokyo Night and Catppuccin palettes from [basecamp/omarchy](https://github.com/basecamp/omarchy).
 - Embedded fonts, all under the SIL Open Font License 1.1 (see `fonts/`): [Silkscreen](https://github.com/googlefonts/silkscreen), [VT323](https://fonts.google.com/specimen/VT323), [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono).
