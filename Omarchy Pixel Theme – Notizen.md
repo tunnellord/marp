@@ -12,10 +12,14 @@ Ein Marp-Theme, das den Stil von **Omarchy** nachahmt. Farben: **Matte Black**. 
 | `MarpThemes/omarchy-pixel-light.css` | Helle Variante, wenige KB, importiert `omarchy-pixel` und tauscht nur die Palette |
 | `MarpThemes/omarchy-pixel-french-purple.css` | French-Purple-Variante (Navy + Magenta), importiert `omarchy-pixel` |
 | `MarpThemes/omarchy-pixel-french-purple-light.css` | Helle French-Purple-Variante (Hellgrau + Magenta), importiert direkt `omarchy-pixel` |
+| `MarpThemes/omarchy-pixel-tokyo-night.css` | Tokyo-Night-Variante (Omarchy-Standard-Theme), importiert `omarchy-pixel` |
+| `MarpThemes/omarchy-pixel-catppuccin-latte.css` | Helle Catppuccin-Latte-Variante, importiert direkt `omarchy-pixel` |
 | `Omarchy Pixel Demo.md` | Demo-Deck mit 12 Folien, zeigt alle Klassen inkl. `small`/`tiny` mit langen Codezeilen |
 | `Omarchy Pixel Light Demo.md` | Dasselbe Deck mit `theme: omarchy-pixel-light` |
 | `Omarchy Pixel French Purple Demo.md` | Dasselbe Deck mit `theme: omarchy-pixel-french-purple` |
 | `Omarchy Pixel French Purple Light Demo.md` | Dasselbe Deck mit `theme: omarchy-pixel-french-purple-light` |
+| `Omarchy Pixel Tokyo Night Demo.md` | Dasselbe Deck mit `theme: omarchy-pixel-tokyo-night` |
+| `Omarchy Pixel Catppuccin Latte Demo.md` | Dasselbe Deck mit `theme: omarchy-pixel-catppuccin-latte` |
 | `.obsidian/plugins/marp-slides/data.json` | Plugin-Einstellungen mit `"ThemePath": "MarpThemes"` |
 
 **Plugin:** Marp Slides (samuele-cozzi) 0.46.1. `EnableHTML` ist **aus**, deshalb kommt der gesamte Look aus reinem CSS und das Deck enthält kein Inline-HTML.
@@ -62,6 +66,8 @@ Folienklassen setzt man mit `<!-- _class: name -->`:
   - Das Basis-Magenta hat auf Navy nur ca. 1,1:1 Kontrast, deshalb ist der Text-Akzent das hellere `#e6007e`. `--yellow` ist hier Hellblau `#5fa8f0`, `--brown` Dunkelmagenta.
   - Hell (`omarchy-pixel-french-purple-light`): bg `#f8f8f8`, fg `#2f2f2f`, Akzent ist das Basis-Magenta `#a20067`, Strings und Inline-Code in Blau `#005eb8`, Extrusion als Magenta-Tönung `#ecc0db`. Es importiert `omarchy-pixel` und nicht `omarchy-pixel-light`, damit `invert` eine Navy-Folie wird und kein Matte Black.
   - `invert` ergibt im dunklen French-Purple-Theme eine helle Folie (`#f8f8f8`, Akzent `#a20067`), Codeblöcke dort weiß.
+- **Tokyo-Night-Theme:** Palette aus `basecamp/omarchy` `themes/tokyo-night/colors.toml` (bg `#1a1b26`, fg `#a9b1d6`/`#c0caf5`, Akzent `#7aa2f7`). Rollen wie im Tokyo-Night-Editorschema: `--yellow` (Strings, Inline-Code, h3) ist Grün `#9ece6a`, `--red` (Zahlen) ist Orange `#ff9e64`, `--brown` (Extrusion) ist Dunkelblau `#3d59a1`. Titel-Extrusion Cyan → Magenta → Dunkelblau. `invert` nutzt Tokyo Night Day (bg `#e1e2e7`, fg `#3760bf`, Akzent `#2e7de9`).
+- **Catppuccin-Latte-Theme:** Palette aus `themes/catppuccin-latte/colors.toml` (base `#eff1f5`, text `#4c4f69`, Akzent Blau `#1e66f5`, Lavendel `#7287fd`). Strings, Inline-Code und h3 in Grün `#40a02b`, Zahlen in Peach `#fe640b`, Extrusion als Blau-Tönung `#bccafb`. Titel-Extrusion Lavendel → Mauve `#8839ef` → Blau-Tönung. Importiert `omarchy-pixel` statt `omarchy-pixel-light`, damit `invert` eine Catppuccin-Mocha-Folie wird (Omarchys dunkles `catppuccin`-Theme: bg `#1e1e2e`, Akzent `#89b4fa`).
 - **Zu volle Folien:** `justify-content: safe center`. Läuft der Inhalt über, klebt er oben und verschwindet nicht unter der Leiste. Automatisch passend skalieren kann CSS nicht, dafür gibt es `small`/`tiny`. Die verkleinern nur die Schriftgröße und das Padding von `pre`.
 - **Hintergrund:** Punktraster mit 24px Abstand plus Scanlines alle 4px
 - **Kein `repeating-linear-gradient`:** Chromium schreibt den ins PDF als Shading mit PostScript-Funktion (FunctionType 4), und viele PDF-Viewer zeichnen das als durchgehende Fläche. Deshalb ist die h2-Linie gestrichelt nur noch als einzelne Kachel mit harten Kanten plus `background-repeat` gebaut, das gilt auch für `hr` und die Scanlines.
@@ -69,10 +75,10 @@ Folienklassen setzt man mit `<!-- _class: name -->`:
 ## Verifikation (lokal)
 ```bash
 cd <vault>
-CHROME_PATH=/usr/bin/chromium npx -y @marp-team/marp-cli@latest \
+CHROME_PATH=/usr/bin/chromium npx -y @marp-team/marp-cli@latest --no-stdin \
   --theme-set MarpThemes/ --images png -o /tmp/demo.png -- "Omarchy Pixel Demo.md"
 ```
-Das dauert etwa 1–2 Minuten, also am besten im Hintergrund laufen lassen.
+Das dauert nur ein paar Sekunden. Ohne `--no-stdin` wartet marp-cli in einer Shell ohne Terminal auf Eingaben über stdin und hängt dann scheinbar endlos. PDF: `--pdf -o "<Name>.pdf"` statt `--images png`.
 
 ## Offene Punkte / Ideen
 - [x] ~~Cursor fehlt auf der Titelfolie~~: Das war kein Bug. In Obsidian blinkt er. Wahrscheinlich hat der PNG-Export genau die Phase erwischt, in der er ausgeblendet ist.
@@ -80,7 +86,9 @@ Das dauert etwa 1–2 Minuten, also am besten im Hintergrund laufen lassen.
 - [x] Lange Codezeilen laufen rechts raus → umbrechen jetzt
 - [x] Zu volle Folien laufen unten raus → `safe center` + Klassen `small`/`tiny`, die nur Codeblöcke verkleinern. Eine erste Version hat per `zoom` die ganze Folie verkleinert. Das war nicht gewünscht, betroffen sein soll nur der Code.
 - [x] French-Purple-Farbschema (`omarchy-pixel-french-purple`, dunkel). Dazu die helle Variante `omarchy-pixel-french-purple-light`.
-- [ ] Weitere Omarchy-Farbschemata als eigene Theme-Dateien nach dem gleichen Muster wie das helle Theme, z. B. Tokyo Night, Gruvbox, Rosé Pine, Catppuccin
+- [x] Tokyo-Night-Farbschema (`omarchy-pixel-tokyo-night`)
+- [x] Catppuccin-Latte-Farbschema (`omarchy-pixel-catppuccin-latte`, hell)
+- [ ] Weitere Omarchy-Farbschemata als eigene Theme-Dateien nach dem gleichen Muster, z. B. Gruvbox, Rosé Pine, Catppuccin Mocha als eigenes dunkles Theme
 - [ ] Option: VT323 auch für den Fließtext, für mehr Pixel-Look
 - [ ] Pixel-Fortschrittsbalken unten
 - [x] Workspaces oben links optional ausblendbar (`no-workspaces`)

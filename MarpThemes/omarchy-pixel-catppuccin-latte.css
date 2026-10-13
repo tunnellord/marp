@@ -1,0 +1,103 @@
+/* @theme omarchy-pixel-catppuccin-latte */
+
+/*
+ * omarchy-pixel-catppuccin-latte — light variant in Catppuccin Latte
+ * (basecamp/omarchy themes/catppuccin-latte/colors.toml):
+ *   base #eff1f5, text #4c4f69, accent blue #1e66f5, lavender #7287fd,
+ *   mauve #8839ef, green #40a02b, peach #fe640b, red #d20f39.
+ * Roles follow the Catppuccin editor scheme: strings green, numbers peach.
+ * Imports the base theme (not omarchy-pixel-light) so that `invert`
+ * becomes a Catppuccin Mocha slide (Omarchy's dark `catppuccin` theme).
+ */
+
+@import 'omarchy-pixel';
+
+:root {
+  --bg: #eff1f5;
+  --bg-dark: #e6e9ef;
+  --bg-darker: #dce0e8;
+  --bg-light: #f8f9fb;
+  --selection: #ccd0da;
+  --muted: #bcc0cc;
+  --fg: #4c4f69;
+  --fg-dim: #6c6f85;
+  --fg-dark: #8c8fa1;
+  --fg-bright: #303446;
+  --accent: #1e66f5;
+  --accent-bright: #7287fd;
+  /* "yellow" role (strings, inline code, h3) → Catppuccin green */
+  --yellow: #40a02b;
+  /* "red" role (numbers, literals) → Catppuccin peach */
+  --red: #fe640b;
+  --red-deep: #d20f39;
+  /* pixel extrusion → light blue tint */
+  --brown: #bccafb;
+
+  --grid-dot: #dce0e8;
+  --scan: rgba(0, 0, 0, 0.025);
+  --window-bg: #f8f9fb;
+  --code-bg: #f8f9fb;
+  --shadow: #ccd0da;
+  --bar-bg: #dce0e8;
+}
+
+/* title extrusion: lavender → mauve → blue tint */
+section.lead h1 {
+  text-shadow:
+    var(--px) var(--px) 0 var(--accent-bright),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 #8839ef,
+    calc(var(--px) * 3) calc(var(--px) * 3) 0 var(--brown),
+    calc(var(--px) * 4) calc(var(--px) * 4) 0 var(--shadow);
+}
+
+/* ───────── invert → Catppuccin Mocha slide ───────── */
+
+section.invert {
+  --bg: #1e1e2e;
+  --bg-dark: #181825;
+  --bg-darker: #11111b;
+  --bg-light: #313244;
+  --selection: #45475a;
+  --muted: #585b70;
+  --fg: #cdd6f4;
+  --fg-dim: #a6adc8;
+  --fg-dark: #6c7086;
+  --fg-bright: #f5e0dc;
+  --accent: #89b4fa;
+  --accent-bright: #b4befe;
+  --yellow: #a6e3a1;
+  --red: #fab387;
+  --brown: #cba6f7;
+  --grid-dot: #262637;
+  --scan: rgba(0, 0, 0, 0.22);
+  --window-bg: #11111b;
+  --code-bg: #11111b;
+  --shadow: #11111b;
+  --bar-bg: #11111b;
+  background-image:
+    linear-gradient(to bottom, var(--scan) 2px, transparent 2px),
+    radial-gradient(circle at 1px 1px, var(--grid-dot) 1.5px, transparent 1.6px);
+}
+section.invert h1 {
+  color: var(--accent);
+  text-shadow:
+    var(--px) var(--px) 0 var(--brown),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--shadow);
+}
+section.invert h1::after {
+  color: var(--accent);
+}
+section.invert code {
+  color: var(--yellow);
+  background: var(--bg-light);
+}
+section.invert pre {
+  background: var(--code-bg);
+}
+section.invert pre code {
+  color: var(--fg);
+  background: none;
+}
+section.invert header {
+  color: var(--fg-dim);
+}
