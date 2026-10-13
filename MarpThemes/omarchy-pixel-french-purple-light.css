@@ -1,11 +1,11 @@
-/* @theme omarchy-pixel-axians-light */
+/* @theme omarchy-pixel-french-purple-light */
 
 /*
- * omarchy-pixel-axians-light — light Axians variant, like the website:
- * light grey paper, anthracite text, brand magenta #a20067 as accent,
- * brand blue #005eb8 for strings / inline code.
+ * omarchy-pixel-french-purple-light — light French purple variant:
+ * light grey paper, anthracite text, magenta #a20067 as accent,
+ * blue #005eb8 for strings / inline code.
  * Imports the base theme (not omarchy-pixel-light) so that `invert`
- * becomes a navy Axians slide instead of Matte Black.
+ * becomes a navy slide instead of Matte Black.
  */
 
 @import 'omarchy-pixel';
@@ -46,7 +46,7 @@ section.lead h1 {
     calc(var(--px) * 4) calc(var(--px) * 4) 0 var(--shadow);
 }
 
-/* ───────── invert → navy Axians slide ───────── */
+/* ───────── invert → navy slide ───────── */
 
 section.invert {
   --bg: #0d1628;

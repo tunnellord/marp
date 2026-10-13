@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: omarchy-pixel-axians-light
+theme: omarchy-pixel-french-purple
 paginate: true
 header: '22:14  ·  Sat Oct 11'
 footer: 'omarchy-pixel · marp theme'
